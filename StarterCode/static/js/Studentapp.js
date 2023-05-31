@@ -47,7 +47,7 @@ function metaData(demographicInfo) {
     wfreq: ${demographicInfo.wfreq}`
     );
 }
-
+// Create a function to build the charts
 function hbarChart(selectedId) {
     let x_axis = selectedId.sample_values.slice(0, 10).reverse();
     let y_axis = selectedId.otu_ids
@@ -63,7 +63,7 @@ function hbarChart(selectedId) {
         type: "bar",
         orientation: "h",
     };
-
+// Build the bar chart
     let chart = [barChart];
 
     let layout = {
@@ -79,7 +79,7 @@ function hbarChart(selectedId) {
 
     Plotly.newPlot("bar", chart, layout);
 }
-
+// Build the bubble chart
 function bubbleChart(selectedId) {
     let x_axis = selectedId.otu_ids;
     let y_axis = selectedId.sample_values;
@@ -94,7 +94,7 @@ function bubbleChart(selectedId) {
         mode: "markers",
         marker: {
             color: color,
-            colorscale: "Pastel",
+            colorscale: "Picnic",
             size: marker_size,
         },
         type: "scatter",
